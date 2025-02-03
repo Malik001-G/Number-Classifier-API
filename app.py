@@ -22,7 +22,7 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
     return JSONResponse(
         status_code=400,
         content={
-            "number": str(request.query_params.get("number", "")),
+            "number": str(request.query_params.get("number", "alphabet")),
             "error": True
         },
     )
@@ -77,17 +77,7 @@ def get_parity(n: int) -> str:
 
 
 @app.get("/api/classify-number")
-
 async def classify_number(number: int = Query(..., description="The number to analyze")):
-    if number is None:
-        return JSONResponse(
-            status_code=400,
-            content={
-                "number": "missing",
-                "error": True
-            },
-        )
-
     prime_task = asyncio.to_thread(is_prime, number)
     perfect_task = asyncio.to_thread(is_perfect, number)
     armstrong_task = asyncio.to_thread(is_armstrong, number)
