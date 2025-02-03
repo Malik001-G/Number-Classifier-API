@@ -22,11 +22,11 @@ This is a public API built with FastAPI that provides basic classification of nu
   ```
 
 ## API Documentation
-- [API Docs](http://127.0.0.1:8000/docs)
+- [API Docs](https://number-classifier-api.vercel.app/docs)
 
 ### Endpoint
 
-- **URL**: `http://127.0.0.1:8000/api/classify-number?number={n}`
+- **URL**: `https://number-classifier-api.vercel.app`
 - **Method**: `GET`
 
 ### Request Example
@@ -59,12 +59,3 @@ If an invalid value is provided for the number, the API will return a 400 status
   "number": "alphabet",
   "error": true
 }
-```
-
-### License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-This format should now be consistent with your example. Let me know if you need any further adjustments!

@@ -27,7 +27,6 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
         },
     )
 
-
 @lru_cache(maxsize=100)
 def fetch_fun_fact(n: int) -> str:
     try:
