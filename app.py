@@ -75,8 +75,19 @@ def get_parity(n: int) -> str:
     return "even" if n % 2 == 0 else "odd"
 
 
+
 @app.get("/api/classify-number")
+
 async def classify_number(number: int = Query(..., description="The number to analyze")):
+    if number is None:
+        return JSONResponse(
+            status_code=400,
+            content={
+                "number": "",
+                "error": True
+            },
+        )
+
     prime_task = asyncio.to_thread(is_prime, number)
     perfect_task = asyncio.to_thread(is_perfect, number)
     armstrong_task = asyncio.to_thread(is_armstrong, number)
