@@ -8,7 +8,7 @@ This is a public API built with FastAPI that provides basic classification of nu
 
 - **Clone the repository**
   ```bash
-  git clone https://github.com/your-username/Number-Classifier-API
+  git clone https://github.com/Malik001-G/Number-Classifier-API
   ```
 
 - **Install Dependencies**
@@ -18,7 +18,7 @@ This is a public API built with FastAPI that provides basic classification of nu
 
 - **Run the application**
   ```bash
-  uvicorn main:app --reload
+  uvicorn app:app --reload
   ```
 
 ## API Documentation
