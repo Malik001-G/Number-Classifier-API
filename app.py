@@ -89,10 +89,6 @@ async def classify_number(number: int = Query(..., description="The number to an
     )
 
     properties = []
-    if is_prime_result:
-        properties.append("prime")
-    if is_perfect_result:
-        properties.append("perfect")
     if is_armstrong_result:
         properties.append("armstrong")
     properties.append(parity_result)
