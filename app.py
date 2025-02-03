@@ -83,7 +83,7 @@ async def classify_number(number: int = Query(..., description="The number to an
         return JSONResponse(
             status_code=400,
             content={
-                "number": "",
+                "number": "missing",
                 "error": True
             },
         )
