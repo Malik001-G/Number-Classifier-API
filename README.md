@@ -22,11 +22,11 @@ This is a public API built with FastAPI that provides basic classification of nu
   ```
 
 ## API Documentation
-- [API Docs](https://number-classifier-api.vercel.app/docs)
+- [API Docs](https://numclassifyapi.vercel.app/docs)
 
 ### Endpoint
 
-- **URL**: `https://number-classifier-api.vercel.app`
+- **URL**: `https://numclassifyapi.vercel.app/api/classify-number`
 - **Method**: `GET`
 
 

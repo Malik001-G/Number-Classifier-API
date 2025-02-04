@@ -64,6 +64,8 @@ def get_parity(n: int) -> str:
 
 @app.get("/api/classify-number")
 async def classify_number(number: int = Query(..., description="The number to analyze")):
+    if number < 0:
+        raise HTTPException(status_code=400, detail="Number must be a positive integer")
     
     is_prime_result, is_perfect_result, is_armstrong_result, digit_sum_result, parity_result, fun_fact_result = await asyncio.gather(
         asyncio.to_thread(is_prime, number),
@@ -72,6 +74,7 @@ async def classify_number(number: int = Query(..., description="The number to an
         asyncio.to_thread(digit_sum, number),
         asyncio.to_thread(get_parity, number),
         fetch_fun_fact(number),  
+
     )
 
     properties = []
